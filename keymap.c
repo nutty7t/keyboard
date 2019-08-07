@@ -39,6 +39,7 @@ extern keymap_config_t keymap_config;
 #define SKC_Z LSFT(KC_Z)
 
 #define T_ARROW LT(ARROW, KC_T)
+#define N_BRACK LT(BRACKET, KC_N)
 #define SPC_PAD LT(NUMPAD, KC_SPC)
 #define MIN_SYM LT(SYMBOL, KC_MINS)
 #define ENT_SFT LT(SHIFT, KC_ENT)
@@ -58,7 +59,8 @@ enum custom_layers {
   SHIFT,
   NUMPAD,
   SYMBOL,
-  ARROW
+  ARROW,
+  BRACKET
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -66,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,                    KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_ESC,
-    KC_ESC,  KC_A_CT, KC_R_AT, KC_S_UI, T_ARROW, KC_G,                      KC_M,    KC_N,    KC_E_UI, KC_I_AT, KC_O_CT, KC_ESC,
+    KC_ESC,  KC_A_CT, KC_R_AT, KC_S_UI, T_ARROW, KC_G,                      KC_M,    N_BRACK, KC_E_UI, KC_I_AT, KC_O_CT, KC_ESC,
     KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES, KC_ESC,
                                         _______, _______, SPC_PAD,  ENT_SFT, _______, _______
   ),
@@ -100,6 +102,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BSPC, KC_DEL,  _______, _______, _______,
+                                        _______, _______, _______, _______, _______, _______
+  ),
+
+  [_BRACKET] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, KC_LPRN, KC_RPRN, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, KC_LCBR, KC_RCBR, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, KC_LABK, KC_RABK, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
                                         _______, _______, _______, _______, _______, _______
   )
 
