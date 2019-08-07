@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SHIFT] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, SKC_Q,   SKC_W,   SKC_F,   SKC_P,   SKC_B,                     SKC_J,   SKC_L,   SKC_U,   SKC_Y,   KC_SCLN, _______,
+    _______, SKC_Q,   SKC_W,   SKC_F,   SKC_P,   SKC_B,                     SKC_J,   SKC_L,   SKC_U,   SKC_Y,   KC_COLN, _______,
     _______, SKC_A,   SKC_R,   SKC_S,   SKC_T,   SKC_G,                     SKC_M,   SKC_N,   SKC_E,   SKC_I,   SKC_O,   _______,
     _______, SKC_Z,   SKC_X,   SKC_C,   SKC_D,   SKC_V,   _______, _______, SKC_K,   SKC_H,   KC_QUOT, KC_DQUO, KC_EXLM, _______,
                                         _______, _______, _______, _______, _______, _______
@@ -88,7 +88,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, KC_BSLS, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
                                         _______, _______, _______, KC_0,    _______, _______
   ),
-
   [_SYMBOL] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                   _______, KC_AMPR, KC_ASTR, _______, _______, _______,
