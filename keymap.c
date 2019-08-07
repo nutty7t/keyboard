@@ -5,10 +5,11 @@ extern keymap_config_t keymap_config;
 #define _COLEMAK  (0)
 #define _SHIFT    (1)
 #define _NUMPAD   (2)
-#define _ARROW    (3)
-#define _BRACKET  (4)
-#define _FUNCTION (5)
-#define _MOUSE    (6)
+#define _SYMBOL   (3)
+#define _ARROW    (4)
+#define _BRACKET  (5)
+#define _FUNCTION (6)
+#define _MOUSE    (7)
 
 #define SKC_A LSFT(KC_A)
 #define SKC_B LSFT(KC_B)
@@ -37,11 +38,18 @@ extern keymap_config_t keymap_config;
 #define SKC_Y LSFT(KC_Y)
 #define SKC_Z LSFT(KC_Z)
 
+#define T_ARROW LT(ARROW, KC_T)
 #define ENT_SFT LT(SHIFT, KC_ENT)
+#define COM_CTL MT(MOD_LCTL, KC_COMM)
+#define KC_6_AT MT(MOD_LALT, KC_6)
+#define SFT_TAB LSFT(KC_TAB)
 
 enum custom_layers {
   COLEMAK,
-  SHIFT
+  SHIFT,
+  NUMPAD,
+  SYMBOL,
+  ARROW,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -49,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,                    KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_ESC,
-    KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ESC,
+    KC_ESC,  KC_A,    KC_R,    KC_S,    T_ARROW, KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ESC,
     KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES, KC_ESC,
                                         _______, _______, KC_SPC,  ENT_SFT, _______, _______
   ),
@@ -59,6 +67,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, SKC_Q,   SKC_W,   SKC_F,   SKC_P,   SKC_B,                     SKC_J,   SKC_L,   SKC_U,   SKC_Y,   KC_SCLN, _______,
     _______, SKC_A,   SKC_R,   SKC_S,   SKC_T,   SKC_G,                     SKC_M,   SKC_N,   SKC_E,   SKC_I,   SKC_O,   _______,
     _______, SKC_Z,   SKC_X,   SKC_C,   SKC_D,   SKC_V,   _______, _______, SKC_K,   SKC_H,   KC_QUOT, KC_DQUO, KC_EXLM, _______,
+                                        _______, _______, _______, _______, _______, _______
+  ),
+
+  [_NUMPAD] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, KC_GRV,  KC_TILD, KC_ASTR, KC_SLSH, KC_PERC,                   _______, KC_7,    KC_8,    KC_9,    KC_PEQL, _______,
+    _______, SFT_TAB, KC_TAB,  KC_PLUS, KC_MINS, KC_UNDS,                   KC_SPC,  KC_4,    KC_5,    KC_6_AT, COM_CTL, _______,
+    _______, _______, _______, _______, KC_BSLS, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
+                                        _______, _______, _______, _______, KC_0,    _______
+  ),
+
+  [_SYMBOL] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   _______, KC_AMPR, KC_ASTR, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   _______, KC_DLR,  KC_PERC, KC_CIRC, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_EXLM, KC_AT,   KC_HASH, _______, _______,
+                                        _______, _______, _______, _______, _______, _______
+  ),
+
+  [_ARROW] = LAYOUT(
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BSPC, KC_DEL,  _______, _______, _______,
                                         _______, _______, _______, _______, _______, _______
   )
 
