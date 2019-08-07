@@ -39,6 +39,7 @@ extern keymap_config_t keymap_config;
 #define SKC_Z LSFT(KC_Z)
 
 #define T_ARROW LT(ARROW, KC_T)
+#define SPC_PAD LT(NUMPAD, KC_SPC)
 #define ENT_SFT LT(SHIFT, KC_ENT)
 #define COM_CTL MT(MOD_LCTL, KC_COMM)
 #define KC_6_AT MT(MOD_LALT, KC_6)
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_ESC,
     KC_ESC,  KC_A,    KC_R,    KC_S,    T_ARROW, KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ESC,
     KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES, KC_ESC,
-                                        _______, _______, KC_SPC,  ENT_SFT, _______, _______
+                                        _______, _______, SPC_PAD,  ENT_SFT, _______, _______
   ),
 
   [_SHIFT] = LAYOUT(
