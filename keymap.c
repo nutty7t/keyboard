@@ -42,6 +42,13 @@ extern keymap_config_t keymap_config;
 #define SPC_PAD LT(NUMPAD, KC_SPC)
 #define MIN_SYM LT(SYMBOL, KC_MINS)
 #define ENT_SFT LT(SHIFT, KC_ENT)
+
+#define KC_A_CT MT(MOD_LCTL, KC_A)
+#define KC_R_AT MT(MOD_LALT, KC_R)
+#define KC_S_UI MT(MOD_LGUI, KC_S)
+#define KC_O_CT MT(MOD_LCTL, KC_O)
+#define KC_I_AT MT(MOD_LALT, KC_I)
+#define KC_E_UI MT(MOD_LGUI, KC_E)
 #define COM_CTL MT(MOD_LCTL, KC_COMM)
 #define KC_6_AT MT(MOD_LALT, KC_6)
 #define SFT_TAB LSFT(KC_TAB)
@@ -51,7 +58,7 @@ enum custom_layers {
   SHIFT,
   NUMPAD,
   SYMBOL,
-  ARROW,
+  ARROW
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -59,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,                    KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,  KC_ESC,
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_ESC,
-    KC_ESC,  KC_A,    KC_R,    KC_S,    T_ARROW, KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ESC,
+    KC_ESC,  KC_A_CT, KC_R_AT, KC_S_UI, T_ARROW, KC_G,                      KC_M,    KC_N,    KC_E_UI, KC_I_AT, KC_O_CT, KC_ESC,
     KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______, _______, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES, KC_ESC,
                                         _______, _______, SPC_PAD,  ENT_SFT, _______, _______
   ),
@@ -77,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_GRV,  KC_TILD, KC_ASTR, KC_SLSH, KC_PERC,                   _______, KC_7,    KC_8,    KC_9,    KC_PEQL, _______,
     _______, SFT_TAB, KC_TAB,  KC_PLUS, MIN_SYM, KC_UNDS,                   KC_SPC,  KC_4,    KC_5,    KC_6_AT, COM_CTL, _______,
     _______, _______, _______, _______, KC_BSLS, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
-                                        _______, _______, _______, _______, KC_0,    _______
+                                        _______, _______, _______, KC_0,    _______, _______
   ),
 
   [_SYMBOL] = LAYOUT(
