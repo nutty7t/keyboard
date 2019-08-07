@@ -37,19 +37,11 @@ extern keymap_config_t keymap_config;
 #define SKC_Y LSFT(KC_Y)
 #define SKC_Z LSFT(KC_Z)
 
-#define ENT_SFT TD(TD_ENT_SFT)
-
-enum tap_dance {
-  TD_ENT_SFT = 0
-};
+#define ENT_SFT LT(SHIFT, KC_ENT)
 
 enum custom_layers {
-  COLEMAK = SAFE_RANGE,
+  COLEMAK,
   SHIFT
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_ENT_SFT] = ACTION_TAP_DANCE_DUAL_ROLE(KC_ENT, _SHIFT)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
