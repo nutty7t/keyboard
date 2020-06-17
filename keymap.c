@@ -22,6 +22,13 @@ extern keymap_config_t keymap_config;
 // Shift Tab
 #define SFT_TAB LSFT(KC_TAB)
 
+// Tmux Keys
+#define TMUX_PF LCTL(KC_SPACE)
+#define TMUX_L  LCTL(KC_H)
+#define TMUX_D  LCTL(KC_J)
+#define TMUX_U  LCTL(KC_K)
+#define TMUX_R  LCTL(KC_L)
+
 // Layers
 #define _COLEMAK  (0)
 #define _ARROW    (1)
@@ -29,15 +36,16 @@ extern keymap_config_t keymap_config;
 #define _FUNCTION (3)
 #define _NUMPAD   (4)
 #define _SYMBOL   (5)
+#define _TMUX     (6)
 
 // Momentary Layer Keys
-#define ARROWS MO(ARROW_LAYER)
-#define LAMBDA MO(FUNCTION_LAYER)
-#define MEDIA MO(MEDIA_LAYER)
-#define MOUSE MO(MOUSE_LAYER)
-#define NUMPAD MO(NUMPAD_LAYER)
+#define ARROWS  MO(ARROW_LAYER)
+#define LAMBDA  MO(FUNCTION_LAYER)
+#define MEDIA   MO(MEDIA_LAYER)
+#define MOUSE   MO(MOUSE_LAYER)
+#define NUMPAD  MO(NUMPAD_LAYER)
 #define SYMBOLS MO(SYMBOL_LAYER)
-#define SYSTEM MO(SYSTEM_LAYER)
+#define TMUX    MO(TMUX_LAYER)
 
 enum custom_layers {
   COLEMAK_LAYER,
@@ -45,7 +53,8 @@ enum custom_layers {
   MEDIA_LAYER,
   FUNCTION_LAYER,
   NUMPAD_LAYER,
-  SYMBOL_LAYER
+  SYMBOL_LAYER,
+  TMUX_LAYER
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -55,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     SFT_TAB, KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    NUMPAD,  KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_GRV,  _______,
     KC_CAPS, ARROWS,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_ESC,  KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_ENT,
     _______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_SLSH, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_MINS, KC_RSFT, _______,
-    KC_LCTL, _______, _______, MEDIA,   KC_LALT, KC_LGUI, KC_SPC,  KC_LSFT, SYMBOLS, KC_RCTL, LAMBDA,  _______, _______, _______, _______
+    KC_LCTL, TMUX,    _______, MEDIA,   KC_LALT, KC_LGUI, KC_SPC,  KC_LSFT, SYMBOLS, KC_RCTL, LAMBDA,  _______, _______, _______, _______
   ),
 
   [_ARROW] = LAYOUT_ortho_5x15(
@@ -96,6 +105,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, KC_LABK, KC_RABK, KC_LPRN, KC_RPRN, _______, _______, KC_PLUS, KC_DLR,  KC_PERC, KC_CIRC, KC_ENT,  _______, _______,
     _______, _______, _______, _______, KC_LBRC, KC_RBRC, _______, _______, KC_MINS, KC_EXLM, KC_AT,   KC_HASH, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_0,    KC_DOT,  _______, _______, _______
+  ),
+
+  [_TMUX] = LAYOUT_ortho_5x15(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, TMUX_L,  TMUX_D,  TMUX_U,  TMUX_R,  _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, TMUX_PF, _______, TMUX_PF, _______, _______, _______, _______, _______, _______
   ),
 
 };
