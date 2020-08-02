@@ -22,9 +22,6 @@ extern keymap_config_t keymap_config;
 // Shift Tab
 #define SFT_TAB LSFT(KC_TAB)
 
-// Tilde (~)
-#define TILDE LSFT(KC_GRAVE)
-
 // Tmux Keys
 #define TMUX_PF LCTL(KC_SPACE)
 #define TMUX_L  LCTL(KC_H)
@@ -64,8 +61,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK] = LAYOUT_ortho_5x15(
     KC_ESC,  _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,  KC_BSPC,
-    SFT_TAB, KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    NUMPAD,  KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_GRV,  _______,
-    KC_CAPS, ARROWS,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_ESC,  KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_ENT,
+    SFT_TAB, KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    _______, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_GRV,  _______,
+    KC_CAPS, ARROWS,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    NUMPAD,  KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_ENT,
     _______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_SLSH, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_MINS, KC_RSFT, _______,
     KC_LCTL, TMUX,    _______, MEDIA,   KC_LALT, KC_LGUI, KC_SPC,  KC_LSFT, SYMBOLS, KC_RCTL, LAMBDA,  _______, _______, _______, _______
   ),
@@ -104,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT_ortho_5x15(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, TILDE,   KC_LCBR, KC_RCBR, KC_SLSH, _______, KC_PIPE, KC_AMPR, KC_ASTR, KC_EQL,  _______, _______, _______,
+    _______, _______, _______, KC_TILD, KC_LCBR, KC_RCBR, KC_SLSH, _______, KC_PIPE, KC_AMPR, KC_ASTR, KC_EQL,  _______, _______, _______,
     _______, _______, KC_LABK, KC_RABK, KC_LPRN, KC_RPRN, KC_ESC,  _______, KC_PLUS, KC_DLR,  KC_PERC, KC_CIRC, KC_ENT,  _______, _______,
     _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS, _______, KC_MINS, KC_EXLM, KC_AT,   KC_HASH, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_0,    KC_DOT,  _______, _______, _______
@@ -145,26 +142,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code(KC_1);
         } else {
           unregister_code(KC_1);
-        }
-        return false;
-      }
-      break;
-
-    // '/' => '\'
-    case KC_SLASH:
-      if (keyboard_report->mods & SHIFT_MASK) {
-        if (record->event.pressed) {
-          if (keyboard_report->mods & LSHIFT_MASK) {
-            unregister_code(KC_LSHIFT);
-            register_code(KC_BSLASH);
-            register_code(KC_LSHIFT);
-          } else if (keyboard_report->mods & RSHIFT_MASK) {
-            unregister_code(KC_RSHIFT);
-            register_code(KC_BSLASH);
-            register_code(KC_RSHIFT);
-          }
-        } else {
-          unregister_code(KC_BSLASH);
         }
         return false;
       }
