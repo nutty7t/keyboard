@@ -28,6 +28,9 @@ extern keymap_config_t keymap_config;
 // Ctrl Space Mod Tap
 #define CTL_SPC LCTL_T(KC_SPC)
 
+// Caps Lock / Extend Layer Mod Tap
+#define CAP_EXT LT(ARROW_LAYER, KC_CAPS)
+
 // Tmux Keys
 #define TMUX_PF LCTL(KC_SPACE)
 #define TMUX_L  LCTL(KC_H)
@@ -68,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT_ortho_5x15(
     KC_ESC,  _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,  KC_BSPC,
     SFT_TAB, KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    _______, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_GRV,  _______,
-    NUMPAD,  ARROWS,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    _______, KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_ENT,
+    NUMPAD,  CAP_EXT, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    _______, KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_ENT,
     MEDIA,   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_SLSH, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_MINS, KC_RSFT, _______,
     KC_LCTL, TMUX,    _______, MEDIA,   KC_LALT, KC_LGUI, CTL_SPC, KC_LEAD, SYMBOLS, KC_LSFT, LAMBDA,  _______, _______, _______, _______
   ),
