@@ -132,6 +132,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(KC_SLASH);
         }
         return false;
+      } else {
+        unregister_code(KC_LSFT);
+        unregister_code(KC_SLASH);
       }
       break;
 
@@ -144,6 +147,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(KC_1);
         }
         return false;
+      } else {
+        unregister_code(KC_LSFT);
+        unregister_code(KC_1);
       }
       break;
   }
