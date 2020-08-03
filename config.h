@@ -16,3 +16,6 @@
  */
 
 #pragma once
+
+#define PERMISSIVE_HOLD
+#define LEADER_TIMEOUT 300
