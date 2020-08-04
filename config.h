@@ -17,6 +17,6 @@
 
 #pragma once
 
-#define PERMISSIVE_HOLD
 #define LEADER_TIMEOUT 300
-#define TAPPING_TERM 100
+#define PERMISSIVE_HOLD
+#define TAPPING_TERM 200
