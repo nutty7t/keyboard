@@ -198,6 +198,11 @@ void matrix_scan_user(void) {
     SEQ_TWO_KEYS(KC_P, KC_U) {
       SEND_STRING("nutty7t");
     }
+
+    // [p]rint [p]gp fingerprint
+    SEQ_TWO_KEYS(KC_P, KC_P) {
+      SEND_STRING("6CA54B7A2A23A66A");
+    }
   }
 }
 
