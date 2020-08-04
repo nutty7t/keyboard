@@ -15,7 +15,7 @@ $(keymap_files): $(keymap_dir)
 
 $(hex_file): $(keymap_files)
 	make -C qmk_firmware git-submodule
-	nix-shell --run "make -C qmk_firmware xd75:nutty7t"
+	make -C qmk_firmware xd75:nutty7t
 
 compiled.hex: $(hex_file)
 	@cp $(hex_file) $@
