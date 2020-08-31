@@ -22,6 +22,9 @@ extern keymap_config_t keymap_config;
 // Colon (:)
 #define KC_CLN LSFT(KC_SCLN)
 
+// Double Quote (")
+#define KC_DQT LSFT(KC_QUOT)
+
 // Shift Tab
 #define SFT_TAB LSFT(KC_TAB)
 
@@ -132,8 +135,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYMBOL] = LAYOUT_ortho_5x15(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, KC_GRV,  KC_TILD, KC_LCBR, KC_RCBR, KC_SLSH, _______, KC_PIPE, KC_AMPR, KC_ASTR, KC_EQL,  KC_CLN,  _______, _______,
-    NUMPAD,  _______, KC_LABK, KC_RABK, KC_LPRN, KC_RPRN, KC_ESC,  _______, KC_PLUS, KC_DLR,  KC_PERC, KC_CIRC, KC_ENT,  _______, _______,
-    _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS, _______, KC_MINS, KC_EXLM, KC_AT,   KC_HASH, _______, _______, _______,
+    NUMPAD,  _______, KC_LABK, KC_RABK, KC_LPRN, KC_RPRN, KC_ESC,  _______, KC_PLUS, KC_DLR,  KC_PERC, KC_CIRC, KC_ENT,  KC_DQT,  _______,
+    _______, _______, SFT_TAB, KC_TAB,  KC_LBRC, KC_RBRC, KC_BSLS, _______, KC_MINS, KC_EXLM, KC_AT,   KC_HASH, KC_TAB,  _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_0,    KC_DOT,  _______, _______, _______
   ),
 
